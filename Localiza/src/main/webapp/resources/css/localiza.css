@@ -1,0 +1,53 @@
+/* 
+    Document   : datagrid
+    Created on : 19/03/2012, 14:01:57
+    Author     : thiago.rodrigues
+    Description: Purpose of the stylesheet follows.
+*/
+
+/* 
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+.button {
+   border-top: 1px solid #858e94;
+   background: #EAEAEA;
+   color: #000000;
+   font-size: 17px;
+   font-family: Georgia, serif;
+   vertical-align: middle;
+}
+
+.ui-datagrid {
+    width: 70%;
+}
+
+.ui-datatable {
+  width: 70%;  
+}
+
+.ui-datatable-even {
+    background-color: white;
+}
+
+.resulted-url {
+    color: mediumseagreen;
+    font-size: smaller;
+}
+
+.resulted-resume {
+    font-size: 12px;
+}
+
+a.resulted-title:link {
+    color : blue;
+}
+
+a.resulted-title:visited {
+    color : darkblue;
+}
+
+.fatal-msg {
+   font-weight: bold;
+   color: red;
+   font-size: x-large;
+}
