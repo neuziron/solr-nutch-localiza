@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title><h:outputText value="#{msg.app_name}" /></title>
+        <h:outputStylesheet library="css" name="localiza.css"/>
+    </h:head>
+    <h:body>
+        <center>
+            <h:graphicImage library="images" name="localiza_logo.png" />
+            <h:form id="searchForm">
+                <h:inputText id="fix_ie_bug" style="display:none" />
+                <h:inputText value="#{localizaBean.inputQuery}" size="100"/><br/><br/>
+                <p:commandButton value="#{msg.app_search}" action="#{localizaBean.search}" 
+                                 styleClass="button" ajax="false"/>
+                <p:spacer height="10px" width="10px" />
+                <h:outputText value="#{localizaBean.numResultsFound}" rendered="#{localizaBean.msgResultSetRender}"/>
+                <p:spacer height="10px" width="10px"/>
+                <h:outputText value="#{msg.result_message}" rendered="#{localizaBean.msgResultSetRender}"/>
+                <h:messages fatalClass="fatal-msg" globalOnly="true"/>
+                <br/><br/>
+                <p:dataTable var="doc" value="#{localizaBean.docLazyModel}" rows="10"
+                            paginator="true" emptyMessage="#{msg.empty_message}" 
+                            rendered="#{localizaBean.resultDataTableRender}" paginatorPosition="bottom">
+                    <p:column>
+                        <h:outputLink value="#{doc.url}" styleClass="resulted-title">
+                            <h:outputText value="#{doc.title}"/>
+                        </h:outputLink>
+                        <br/>
+                        <h:outputText value="#{doc.reducedUrl}" styleClass="resulted-url"/>
+                        <br/>
+                        <h:outputText value="#{doc.highlightContent}" styleClass="resulted-resume" escape="false"/>
+                        <br/><br/>
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+        </center>
+    </h:body>
+</html>
