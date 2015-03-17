@@ -1,0 +1,1 @@
+Application to Demonstrate the Apache Solr and Nutch integration. The Localiza application is used to information retrieval.
